@@ -21,5 +21,14 @@ public class PantallaHoraYFecha
         hora = new PantallaDosDigitos (0,24);
         minutos = new PantallaDosDigitos (0,60);
     }
+    
+    /**
+     * Constructor for objects of class PantallaHoraYFecha
+     */
+    public String getFechaYHora ()
+    {
+        return hora.getTextoDeLaPantalla () + ":" + minutos.getTextoDeLaPantalla () + "-" + dia.getTextoDeLaPantalla () + "-" 
+        + mes.getTextoDeLaPantalla () + "-" + ano.getTextoDeLaPantalla (); 
+    }
 
 }
