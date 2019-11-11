@@ -23,12 +23,33 @@ public class PantallaHoraYFecha
     }
     
     /**
-     * Constructor for objects of class PantallaHoraYFecha
+     * Método para obtener un String de 14 caracteres que contenga la fecha y
+     * hora
      */
     public String getFechaYHora ()
     {
         return hora.getTextoDeLaPantalla () + ":" + minutos.getTextoDeLaPantalla () + "-" + dia.getTextoDeLaPantalla () + "-" 
         + mes.getTextoDeLaPantalla () + "-" + ano.getTextoDeLaPantalla (); 
     }
-
+    
+    /**
+     * Método para avanzar un minuto la hora
+     */
+    public void avanzarMinuto ()
+    {
+     minutos.incrementaValorAlmacenado ();
+     
+     if (minutos.getValorAlmacenado () == 0) {
+        hora.incrementaValorAlmacenado ();
+        if (hora.getValorAlmacenado () == 0) {
+            dia.incrementaValorAlmacenado ();
+            if (dia.getValorAlmacenado () == 1) {
+                mes.incrementaValorAlmacenado ();
+                if (mes.getValorAlmacenado () == 1) {
+                    ano. incrementaValorAlmacenado ();
+                }
+            }
+        }
+     }
+    }
 }
